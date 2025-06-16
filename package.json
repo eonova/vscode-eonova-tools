@@ -1,11 +1,10 @@
 {
+  "name": "eonova-tools",
+  "displayName": "Eonova前端工具包",
   "publisher": "eonova",
-  "name": "eonova-vscode-tools",
-  "displayName": "eonova-vscode-tools",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@10.4.1",
-  "description": "",
+  "description": "Eonova dev tools",
   "author": "Nova Eon <hi@eonova.me>",
   "license": "MIT",
   "homepage": "https://github.com/eonova/eonova-vscode-tools#readme",
@@ -17,7 +16,7 @@
     "url": "https://github.com/eonova/eonova-vscode-tools/issues"
   },
   "categories": [
-    "Other"
+    "Extension Packs"
   ],
   "icon": "res/icon.png",
   "extensionPack": [
@@ -56,46 +55,10 @@
     "res/*"
   ],
   "engines": {
-    "vscode": "^1.97.0"
-  },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "contributes": {
-    "commands": [],
-    "configuration": {
-      "type": "object",
-      "title": "eonova-vscode-tools",
-      "properties": {}
-    }
+    "vscode": "^1.26.0"
   },
   "scripts": {
-    "build": "tsdown src/index.ts --external vscode",
-    "dev": "nr build --watch --sourcemap",
-    "prepare": "nr update",
-    "update": "vscode-ext-gen --output src/generated/meta.ts",
-    "lint": "eslint .",
-    "vscode:prepublish": "nr build",
     "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "release": "bumpp && nr publish"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.97.0",
-    "@vscode/vsce": "^3.2.2",
-    "bumpp": "^10.0.3",
-    "eslint": "^9.20.1",
-    "esno": "^4.8.0",
-    "pnpm": "^10.4.1",
-    "vite": "^6.1.0",
-    "vitest": "^3.0.5",
-    "vscode-ext-gen": "^1.0.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
+    "pack": "vsce package --no-dependencies"
   }
 }
