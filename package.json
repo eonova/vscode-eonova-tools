@@ -1,0 +1,101 @@
+{
+  "publisher": "eonova",
+  "name": "eonova-vscode-tools",
+  "displayName": "eonova-vscode-tools",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@10.4.1",
+  "description": "",
+  "author": "Nova Eon <hi@eonova.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/eonova/eonova-vscode-tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eonova/eonova-vscode-tools"
+  },
+  "bugs": {
+    "url": "https://github.com/eonova/eonova-vscode-tools/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "res/icon.png",
+  "extensionPack": [
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "simonhe.common-intellisense",
+    "mikestead.dotenv",
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "simonhe.export-what",
+    "capaj.vscode-exports-autocomplete",
+    "antfu.file-nesting",
+    "mhutchie.git-graph",
+    "GitHub.vscode-pull-request-github",
+    "GitHub.remotehub",
+    "seatonjiang.gitmoji-vscode",
+    "antfu.goto-alias",
+    "antfu.iconify",
+    "ritwickdey.LiveServer",
+    "fabiospampinato.vscode-open-in-github",
+    "antfu.open-in-github-button",
+    "christian-kohler.path-intellisense",
+    "antfu.pnpm-catalog-lens",
+    "alefragnani.project-manager",
+    "antfu.smart-clicks",
+    "Gruntfuggly.todo-tree",
+    "shardulm94.trailing-spaces",
+    "antfu.unocss",
+    "antfu.vite",
+    "vitest.explorer",
+    "Vue.volar"
+  ],
+  "files": [
+    "LICENSE.md",
+    "res/*"
+  ],
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [],
+    "configuration": {
+      "type": "object",
+      "title": "eonova-vscode-tools",
+      "properties": {}
+    }
+  },
+  "scripts": {
+    "build": "tsdown src/index.ts --external vscode",
+    "dev": "nr build --watch --sourcemap",
+    "prepare": "nr update",
+    "update": "vscode-ext-gen --output src/generated/meta.ts",
+    "lint": "eslint .",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.97.0",
+    "@vscode/vsce": "^3.2.2",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.20.1",
+    "esno": "^4.8.0",
+    "pnpm": "^10.4.1",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5",
+    "vscode-ext-gen": "^1.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
